@@ -30,7 +30,7 @@ class DominoLine:
                 prev_dominoes.append(domino)
             if steps == 1:
                 print(self)
-                return 0
+                return None
             if steps > 1:
                 self.step_forward(steps-1)
         else:
@@ -55,7 +55,7 @@ class DominoLine:
                 line = '|'
             if steps == 1:
                 print(''.join(line))
-                return 0
+                return None
             if steps > 1:
                 self.step_backward(steps-1)
         else:
