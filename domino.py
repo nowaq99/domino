@@ -33,3 +33,24 @@ class DominoLine:
                 return 0
             if steps > 1:
                 self.step_forward(steps-1)
+        else:
+            print('input is not correct')
+
+    def step_backward(self, steps=1):
+        if steps > 0:
+            prev_domino = ''
+            line = self.dominoes.copy()
+            for domino_id in range(len(line)):
+                domino = self.dominoes[domino_id]
+                if prev_domino == '/' and domino in ('|', '\\'):
+                    line[domino_id-1] = '|'
+                elif prev_domino in ('|', '/') and domino in '\\':
+                    line[domino_id] = '|'
+                prev_domino = domino
+            if steps == 1:
+                print(''.join(line))
+                return 0
+            if steps > 1:
+                self.step_backward(steps-1)
+        else:
+            print('input is not correct')

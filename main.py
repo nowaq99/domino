@@ -1,6 +1,5 @@
 import domino
 
-a = domino.DominoLine('\||||\|||\|||\\\\')
+a = domino.DominoLine('/||////\\\\\\\||\|||\|||\\\\')
 print(a)
-a.step_forward(2)
-
+a.step_backward(1)
