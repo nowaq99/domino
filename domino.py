@@ -41,7 +41,7 @@ class DominoLine:
     def step_backward(self, steps=1):
         if steps > 0:
             if steps <= len(self.iterations):
-                print(''.join(self.iterations[-steps-1]))
+                print(''.join(self.iterations[-steps]))
             else:
                 if self.iterations:
                     line = self.iterations[0].copy()
@@ -49,7 +49,6 @@ class DominoLine:
                     line = self.dominoes.copy()
                 steps = steps - len(self.iterations)
                 for step in range(steps):
-                    print('dupa')
                     if len(self.dominoes) > 1:
                         prev_domino = ''
                         for domino_id in range(len(line)):
